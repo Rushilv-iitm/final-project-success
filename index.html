@@ -5,18 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Notification Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Final Test</h1>
-    <p>This is a test notification for the final task.</p>
-    <button onclick="showNotification()">Show Notification</button>
-
+    <h1>Notification Test</h1>
+    <p>This is a sample notification test. Click the button below to trigger a notification.</p>
+    <button onclick="triggerNotification()">Trigger Notification</button>
+    
     <script>
-        function showNotification() {
+        function triggerNotification() {
             Notification.requestPermission().then(function(result) {
                 if (result === 'granted') {
                     new Notification('Test Notification', {
-                        body: 'This is just a test notification for the final task.',
+                        body: 'This is a test notification.',
                         icon: 'https://example.com/notification-icon.png'
                     });
                 }
